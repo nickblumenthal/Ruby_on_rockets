@@ -1,11 +1,13 @@
-<form action="/cats" method="POST">
-  <label>Name
-    <input type="text" name="cat[name]" value="<%= @cat.name %>">
-  </label>
 
-  <label>Owner
-    <input type="text" name="cat[owner]" value="<%= @cat.owner %>">
-  </label>
+<h1>new cat</h1>
+<% if flash[:notice.to_s] %>
+<% flash[:notice.to_s].each do |notice| %>
+<%= notice %>
+<% end %>
+<% end %>
 
-  <input type="submit">
-</form>
+<% if flash[:error.to_s] %>
+<% flash[:error.to_s].each do |notice| %>
+<%= notice %>
+<% end %>
+<% end %>

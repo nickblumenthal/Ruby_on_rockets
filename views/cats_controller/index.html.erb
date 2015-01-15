@@ -1,3 +1,15 @@
 <h1>ALL THE CATS</h1>
 <pre><%= @cats.to_s %></pre>
 <a href="/cats/new">New cat!</a>
+
+<% if flash[:notice.to_s] %>
+  <% flash[:notice.to_s].each do |notice| %>
+    <%= notice %>
+  <% end %>
+<% end %>
+
+<% if flash[:error.to_s] %>
+<% flash[:error.to_s].each do |notice| %>
+<%= notice %>
+<% end %>
+<% end %>
