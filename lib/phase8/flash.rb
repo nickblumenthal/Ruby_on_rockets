@@ -27,8 +27,10 @@ module Phase8
       # res.cookies.delete_if do |cookie|
       #   cookie.name == '_rails_lite_app_flash'
       # end
-      byebug
-      res.cookies << WEBrick::Cookie.new('_rails_lite_app_flash', @next_flash.to_json)
+      #byebug
+      cookie = WEBrick::Cookie.new('_rails_lite_app_flash', @next_flash.to_json)
+      cookie.path = "/"
+      res.cookies << cookie
     end
   end
 
